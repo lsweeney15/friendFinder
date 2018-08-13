@@ -8,12 +8,12 @@ var PORT = process.env.PORT || 8080;
 var jsonParser = bodyParser.json()
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extend: true}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json({ type: 'application/vnd.api+json'}));
 app.use(bodyParser.text());
 
-require("./app/routing/apiRoutes.js")(app);
-require("./app/routing/htmlRoutes.js")(app);
+require("./routing/apiRoutes")(app);
+require("./routing/htmlRoutes")(app);
 
 app.listen(PORT, function() {
     console.log("App listening on PORT: " + PORT);

@@ -1,4 +1,4 @@
-var friends = require("../data/friends.js");
+var friends = require("../data/friends");
 var path = require('path');
 
 module.exports = function (app) {
@@ -6,7 +6,7 @@ module.exports = function (app) {
         res.json(friends);
     });
 
-    app.post("/app/frieds", function (req, res) {
+    app.post("/app/friends", function (req, res) {
         var bestMatch = {
             name: "",
             photo: "",

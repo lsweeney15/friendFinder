@@ -189,12 +189,12 @@
         </div>
         <hr>
         <!-- Submit Button -->
-        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
+        <type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
             <i class="fa fa-check-circle" aria-hidden="true"></i>
             Submit</button>
-            <hr>
+            <br>
     </div>
-
+<br>
     <footer class="footer">
         <div class="container">
             <p>
@@ -219,8 +219,7 @@
                 </div>
                 <div class="modal-body">
                     <h2 id="matchName"></h2>
-                    <img id="matchImg" src="file:///Users/lisavanorden/Documents/RCB_files/week13_files/wk13_hw/friendfinder/assets/images/floya_avatar_pic.jpg"
-                        alt="">
+                    <img id="matchImg" src="/Images/27336287_10103648794064347_2242942151978570723_n.jpg" alt="">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -231,21 +230,9 @@
     </div>
 
     <script>
-        // Chosen CSS
-        var config = {
-            '.chosen-select': {},
-            '.chosen-select-deselect': { allow_single_deselect: true },
-            '.chosen-select-no-single': { disable_search_threshold: 10 },
-            '.chosen-select-no-results': { no_results_text: 'Oops, nothing found!' },
-            '.chosen-select-width': { width: "95%" }
-        }
 
-        for (var selector in config) {
-            $(selector).chosen(config[selector]);
-        }
-        // Capture the form inputs 
         $("#submit").on("click", function () {
-            // Form validation
+
             function validateForm() {
                 var isValid = true;
                 $('.form-control').each(function () {
@@ -258,9 +245,9 @@
                 })
                 return isValid;
             }
-            // If all required fields are filled
+
             if (validateForm() == true) {
-                // Create an object for the user's data
+
                 var userData = {
                     name: $("#name").val(),
                     photo: $("#photo").val(),
@@ -275,14 +262,13 @@
                     $("#q9").val(),
                     $("#q10").val(),]
                 }
-                // Grab the URL of the website
+
                 var currentURL = window.location.origin;
-                // AJAX post the data to the friends API. 
+
                 $.post(currentURL + "/api/friends", userData, function (data) {
-                    // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+
                     $("#matchName").text(data.name);
                     $('#matchImg').attr("src", data.photo);
-                    // Show the modal with the best match 
                     $("#resultsModal").modal('toggle');
                 });
             }
@@ -292,6 +278,5 @@
 
             return false;
         });
-
 </body >
 </html >
