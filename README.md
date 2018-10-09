@@ -5,7 +5,7 @@ This repository is for homework assignment #11 for University of Miami Coding Bo
 
 This game was built with JavaScript, Node.JS, Express, JQuery, Bootstrap, HTML, CSS
 
-## It's hosted online here: https://shielded-plateau-70600.herokuapp.com/
+## It's hosted online here: https://calm-hamlet-89867.herokuapp.com/
 
 ## How to Play:
 Friend Finder is a compatibility-based application -- basically a dating app. This full-stack site will
